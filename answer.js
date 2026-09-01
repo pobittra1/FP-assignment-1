@@ -103,3 +103,33 @@ console.log(getCngFare(5, false, 10));
 console.log(getCngFare(5, true));
 console.log(getCngFare(5, true, 10));
  */
+
+// Question 5. Write an arrow function getChaseVerdict(target, scored, ballsLeft) for a cricket run chase.
+
+const getChaseVerdict = (target, scored, ballsLeft) => {
+  const runsNeeded = target - scored;
+  if (runsNeeded <= 0) {
+    return `Won`;
+  } else if (ballsLeft <= 0) {
+    return `Lost`;
+  } else {
+    const requiredRate = (runsNeeded / ballsLeft) * 6;
+    return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${
+      requiredRate <= 6
+        ? "Comfortable"
+        : requiredRate <= 12
+          ? "Tough"
+          : "Almost Impossible"
+    }`;
+  }
+};
+
+/**
+ * For checking purpose
+console.log(getChaseVerdict(200, 200, 12));
+console.log(getChaseVerdict(200, 190, 0));
+console.log(getChaseVerdict(100, 90, 12));
+console.log(getChaseVerdict(100, 80, 12));
+console.log(getChaseVerdict(100, 70, 12));
+console.log(getChaseVerdict(150, 149, 1));
+ */
