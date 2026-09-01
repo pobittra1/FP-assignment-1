@@ -34,3 +34,37 @@ function getDayType(dayParam){
 
 // for check purpose
 // console.log(getDayType("sundayd"));
+
+
+
+
+/*
+Question 3. Write a function validateUsername that takes a username and checks it against these rules, in this order:
+Shorter than 4 characters → return "Too Short"
+Contains a space → return "No Space Allowed"
+Contains the word admin anywhere, in any letter case → return "Reserved Word"
+Otherwise → return "Available"
+*/
+
+function validateUsername(userNameParam){
+const userName = userNameParam.toLowerCase();
+    if(userName.includes(" ")){
+        return `No Space Allowed`;
+    }
+    else if(userName.length < 4){
+        return `Too Short`;
+    }
+    else if(userName.includes("admin")){
+        return `Reserved Word`;
+    }
+    else{
+        return `Available`;
+    }
+}
+
+/*
+Check purpose----
+console.log(validateUsername("rahim islam"));
+console.log(validateUsername("superadmin99"));
+console.log(validateUsername("Admin_Rahim"));
+*/
